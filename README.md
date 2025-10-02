@@ -1,11 +1,7 @@
  -- Welcome to Routelog! -- 
 
 This nifty program stores your routes and completion progress, allowing you to add and manage routes seamlessly.
-We currently have over 1,000 flights stored, allowing you to keep track of and achieve your flying goals!
-
-!!! Python must be directly integrated within your system path for this program to run !!!
-
-And ensure you have python downloaded.. duh.
+We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals!
 
 
 
@@ -23,36 +19,6 @@ And ensure you have python downloaded.. duh.
 
 Reach out on Discord
 
-
-
-
-
-
-- IF DOES NOT RUN -
-
-Follow all steps to ensure proper running.
-
-1 - Download Python on it's newest version
-    - Run the .exe and ensure you properly configure. Make sure you check the box "Add Python 3.x to PATH" and install.
-
-Re-test program.
-
-If still does not work:
-
-2 - Press Win + S and search for (and open) "Manage app execution aliases".
-    - Turn OFF the boxes beside "python.exe" and "python3.exe".
-
-3 - Open command prompt and run "python -c "import sys; print(sys.executable)"".
-    - You will be given a path. Copy the entire thing EXCEPT FOR "\python.exe" at the end.
-
-4 - Press Win + X and select "system"
-    - Press "Advanced system settings"
-    - In the popup, press "Environment Variables"
-    - Under "System Variables", press "Path" and "Edit..."
-    - Press "New" and paste the path from earlier.
-    - Press ok to confirm and close all windows.
-
-Try running again.
 
 
 
