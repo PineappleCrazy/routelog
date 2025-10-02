@@ -1,0 +1,9 @@
+{
+    "ebbu": ["EBAW", "EBBR", "EBCI", "EBLG", "EBOS", "ELLX"],
+    "ehaa": ["EHAM", "EHBK", "EHEH", "EHGG", "EHRD"],
+    "gccc": ["GCFV", "GCGM", "GCHI", "GCLA", "GCLP", "GCRR", "GCTS", "GCXO"],
+    "gooo": ["DIAP", "DIBK", "DIKO", "DIOD", "DISP", "GABS", "GBYD", "GGOV", "GOBD", "GOGS", "GQNI", "GQNO", "GQPP", "GQPZ"],
+    "gvsc": ["GVAC", "GVBA", "GVMA", "GVNP", "GVSF", "GVSN", "GVSV"],
+    "lccc": ["LCLK", "LCPH"],
+    "unselected": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+}
