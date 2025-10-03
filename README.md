@@ -1,4 +1,4 @@
-# -- Welcome to Routelog! --
+# Welcome to Routelog!
 
 This nifty program stores your routes and completion progress, allowing you to add and manage routes seamlessly.
 We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals
@@ -6,8 +6,7 @@ We currently have over 2,000 flights stored, allowing you to keep track of and a
 
 
 
-## - IF YOU NEED SUPPORT -
-
+## IF YOU NEED SUPPORT
 Reach out on Discord
 
 
