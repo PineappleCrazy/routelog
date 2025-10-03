@@ -53,6 +53,8 @@ This function lets you choose which aircraft you'll be prompted with when adding
 + 10 - Select Home FIR
 Routes will only be displayed if they are to/from your home FIR. Enter `any` to disregard this. Your home FIR can be changed at any time.
 
++ 11 - Data Settings
+Import routedata from shuttles provided
 
 
 ### WANT A COMMUNITY TOUCH?
