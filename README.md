@@ -6,7 +6,7 @@ We currently have over 2,000 flights stored, allowing you to keep track of and a
 
 
 
-## IF YOU NEED SUPPORT
+### IF YOU NEED SUPPORT
 Reach out on Discord
 
 
