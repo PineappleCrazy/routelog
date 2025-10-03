@@ -4,13 +4,8 @@ This nifty program stores your routes and completion progress, allowing you to a
 We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals
 
 
-
-
 ### IF YOU NEED SUPPORT
 Reach out on Discord
-
-
-
 
 
 
@@ -18,8 +13,8 @@ Reach out on Discord
 
 + 1 - Adding routes:
 This function adds a route to your database. It will ask for 2 airports and an airline, before prompting you with each available aircraft category.
-The two airports must be input as their 4-DIGIT ICAO CODES. They can be input in either order - it does not matter.
-The airline must be input as its 3-DIGIT ICAO CODE. Note that subsidiaries are generalised, eg. RUK (Ryanair UK) included into RYR (Ryanair).
+The two airports must be input as their `4-DIGIT ICAO CODES`. They can be input in either order - it does not matter.
+The airline must be input as its `3-DIGIT ICAO CODE`. Note that subsidiaries are generalised, eg. `RUK` (Ryanair UK) included into `RYR` (Ryanair).
 When prompted with aircraft, enter EXACTLY "yes" to confirm an aircraft for that route. Under any other input, the program will assume otherwise. If you miss an aircraft, use function 7.
 You will only be prompted with aircraft currently selected.
 If you mistype an airport or airline code, there is currently no way to restore besides manually opening "routes.txt" and changing it yourself. Routes are in alphabetical order by airports.
@@ -40,8 +35,8 @@ Similar to function 2, this will provide information for every route available. 
 
 + 6 - Filtered Routes
 This function displays routes under input filters. These filters are (one) airport, airline and aircraft type.
-In the airport section, you may also enter a COUNTRY, CITY or CONTROL position (eg. Austria, London, EGLL\_N\_APP, EBBU\_W\_CTR), and all airports within these will be selected.
-You may either input a value, or "NULL" to disregard that filter. You may use one filter, or any mixture of the three.
+In the airport section, you may also enter a COUNTRY, CITY or CONTROL position (eg. `Austria`, `London`, `EGLL_N_APP`, `EBBU_W_CTR`), and all airports within these will be selected.
+You may either input a value, or `NULL` to disregard that filter. You may use one filter, or any mixture of the three.
 
 + 7 - Add Aircraft to Route
 This function adds an aircraft to an existing route.
@@ -56,11 +51,11 @@ This is good to use, as you can search up routes to see if they remain in servic
 This function lets you choose which aircraft you'll be prompted with when adding or viewing routes. These can be changed at any time.
 
 + 10 - Select Home FIR
-Routes will only be displayed if they are to/from your home FIR. Enter 'any' to disregard this. Your home FIR can be changed at any time.
+Routes will only be displayed if they are to/from your home FIR. Enter `any` to disregard this. Your home FIR can be changed at any time.
 
 
 
-### WANT A COMMUNITY TOUCH? -
+### WANT A COMMUNITY TOUCH?
 
 I'm currently working on a way to share your databases and compare with others. This will also allow you to better backup your data, as compared to current.
 
@@ -68,7 +63,7 @@ I'm currently working on a way to share your databases and compare with others. 
 
 
 
-### For now, it's just me on my own. I'm clueless in all coding aspects, so use with a grain of salt. Have fun :)
+### For now, it's just me on my own. I'm clueless in all coding aspects, so use with a grain of salt. Have fun :D
 
 ### If you want to contribute, uhh, DM me - making my code less inefficient would be nice
 
