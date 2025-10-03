@@ -57,7 +57,7 @@ def inputVal1(): # secondary function only used selecting airports for searches
     while True:
         user_input = input("\nEnter location (airport or supported grouping): ")
         user_input = user_input.lower()
-        user_input = user_input.replace('á', 'a')
+        user_input = user_input.replace('á', 'a') # standardising inputs, specifically for city names
         user_input = user_input.replace('ä', 'a')
         user_input = user_input.replace('å', 'a')
         user_input = user_input.replace('ă', 'a')
