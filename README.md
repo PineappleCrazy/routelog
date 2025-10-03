@@ -12,6 +12,26 @@ Reach out on Discord
 Download the latest [shuttle](https://github.com/PineappleCrazy/routelog/blob/main/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
 
 
+### Where is supported?
+We proudly (fully) support 57 aerodromes over 14 different countries.
+
+**Countries fully supported:**
++ Belgium
++ Cape Verde
++ Gambia
++ Guinea
++ Guinea-Bissau
++ Luxembourg
++ Mauritania
++ Netherlands
++ Senegal
++ Sierra Leone f
+
+**Countries partically supported:**
++ Morocco
++ Portugal
++ Spain
+
 
 ### Upon running, you will be prompted with all functions available. There is a guide to each below.
 
