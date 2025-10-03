@@ -60,15 +60,7 @@ Routes will only be displayed if they are to/from your home FIR. Enter 'any' to 
 
 
 
-If you need further support, reach out on Discord!
-
-
-
-
-
-
-
-* WANT A COMMUNITY TOUCH? -
+### WANT A COMMUNITY TOUCH? -
 
 I'm currently working on a way to share your databases and compare with others. This will also allow you to better backup your data, as compared to current.
 
@@ -76,7 +68,7 @@ I'm currently working on a way to share your databases and compare with others. 
 
 
 
-For now, it's just me on my own. I'm clueless in all coding aspects, so use with a grain of salt. Have fun :)
+### For now, it's just me on my own. I'm clueless in all coding aspects, so use with a grain of salt. Have fun :)
 
-If you want to contribute, uhh, DM me - making my code less inefficient would be nice
+### If you want to contribute, uhh, DM me - making my code less inefficient would be nice
 
