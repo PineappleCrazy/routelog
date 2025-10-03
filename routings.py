@@ -721,135 +721,22 @@ def special():
                     if len(lists) != 0:
                         print(f"{lists}\n")
 
-                    if 'a2200' in grab and 'a220' in airclist:
-                        print('A220 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a2201' in grab and 'a220' in airclist:
-                        print('A220 - Complete')
-                        allRts += 1
-                    if 'a3200' in grab and 'a320' in airclist:
-                        print('A320 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a3201' in grab and 'a320' in airclist:
-                        print('A320 - Complete')
-                        allRts += 1
-                    if 'a3300' in grab and 'a330' in airclist:
-                        print('A330 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a3301' in grab and 'a330' in airclist:
-                        print('A330 - Complete')
-                        allRts += 1
-                    if 'a3400' in grab and 'a340' in airclist:
-                        print('A340 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a3401' in grab and 'a340' in airclist:
-                        print('A340 - Complete')
-                        allRts += 1
-                    if 'a3500' in grab and 'a350' in airclist:
-                        print('A350 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a3501' in grab and 'a350' in airclist:
-                        print('A350 - Complete')
-                        allRts += 1
-                    if 'a3800' in grab and 'a380' in airclist:
-                        print('A380 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'a3801' in grab and 'a380' in airclist:
-                        print('A380 - Complete')
-                        allRts += 1
-                    if 'b7370' in grab and 'b737' in airclist:
-                        print('B737 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7371' in grab and 'b737' in airclist:
-                        print('B737 - Complete')
-                        allRts += 1
-                    if 'b7470' in grab and 'b747' in airclist:
-                        print('B747 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7471' in grab and 'b747' in airclist:
-                        print('B747 - Complete')
-                        allRts += 1
-                    if 'b7570' in grab and 'b757' in airclist:
-                        print('B757 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7571' in grab and 'b757' in airclist:
-                        print('B757 - Complete')
-                        allRts += 1
-                    if 'b7670' in grab and 'b767' in airclist:
-                        print('B767 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7671' in grab and 'b767' in airclist:
-                        print('B767 - Complete')
-                        allRts += 1
-                    if 'b7770' in grab and 'b777' in airclist:
-                        print('B777 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7771' in grab and 'b777' in airclist:
-                        print('B777 - Complete')
-                        allRts += 1
-                    if 'b7870' in grab and 'b787' in airclist:
-                        print('B787 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'b7871' in grab and 'b787' in airclist:
-                        print('B787 - Complete')
-                        allRts += 1
-                    if 'ex450' in grab and 'e145' in airclist:
-                        print('E145 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'ex451' in grab and 'ex45' in airclist:
-                        print('E145 - Complete')
-                        allRts += 1
-                    if 'ejet0' in grab and 'ejet' in airclist:
-                        print('Ejet - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'ejet1' in grab and 'ejet' in airclist:
-                        print('Ejet - Complete')
-                        allRts += 1
-                    if 'atrs0' in grab and 'atrs' in airclist:
-                        print('ATRs - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'atrs1' in grab and 'atrs' in airclist:
-                        print('ATRs - Complete')
-                        allRts += 1
-                    if 'crjs0' in grab and 'crjs' in airclist:
-                        print('CRJs - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'crjs1' in grab and 'crjs' in airclist:
-                        print('CRJs - Complete')
-                        allRts += 1
-                    if 'dash0' in grab and 'dash' in airclist:
-                        print('Dash - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'dash1' in grab and 'dash' in airclist:
-                        print('Dash - Complete')
-                        allRts += 1
-                    if 'dx280' in grab and 'dx28' in airclist:
-                        print('D228 - Incomplete')
-                        allRts += 1
-                        incompRts += 1
-                    if 'dx281' in grab and 'dx28' in airclist:
-                        print('D228 - Complete')
-                        allRts += 1
-                    print('\n - ')
-                else:
-                    next
+                    for aircraft in grab.split(",")[1:]:
+                        if aircraft[:-1] in airclist:
+                            if aircraft[-1] == "0":
+                                print(f'{aircraft[:-1].upper()} - Incomplete')
+                                allRts += 1
+                                incompRts += 1
+                            elif aircraft[-1] == "1":
+                                print(f'{aircraft[:-1].upper()} - Complete')
+                                allRts += 1
+                            else:
+                                print(f"Invalid formating for the aircraft {aircraft[:-1]}")
+                        else:
+                            print(f"The aircraft {aircraft[:-1]} does not exist within the list!")
+
+                        print("\n - ")
+
         if allRts > 0:
             print(f'\n{allRts-incompRts} flights completed of {allRts} total.\n')
             float(allRts)
