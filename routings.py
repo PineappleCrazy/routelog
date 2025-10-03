@@ -15,6 +15,7 @@ aircpath = os.path.join(os.path.dirname(__file__), 'aircref.json')
 routenumtxt = os.path.join(os.path.dirname(__file__), 'routenum.txt')
 
 routestxt = os.path.join(os.path.dirname(__file__), 'routes.txt') # letting silly python find its text files
+shuttletxt = os.path.join(os.path.dirname(__file__), 'shuttle.txt') # letting silly python find its text files
 backuptxt = os.path.join(os.path.dirname(__file__), 'backup.txt')
 logtxt = os.path.join(os.path.dirname(__file__), 'log.txt')
 
@@ -950,10 +951,37 @@ def setFIR():
 
 def welcome():
     print('Welcome to Routelog! - your comprehensive tracker of all flight progress\n\nTo begin, please select your wanted aircraft types using the -9- function you will be prompted with next\n')
-    print("Files attached such as 'UsageNotes.txt' and '_README.txt' provide full rundowns of the program and its more complex functions.\n\nAll functions rely on ICAO codes. Further breakdowns are located in the text files attached\nThanks,")
+    print("Files attached such as 'UsageNotes.txt' and 'README.md' provide full rundowns of the program and its more complex functions.\n\nAll functions rely on ICAO codes. Further breakdowns are located in the text files attached\nThanks,")
     a = input('\nPress ENTER to continue: ')
     with open(logtxt,'w') as file:
         file.write("entry")
+
+
+
+def importing():
+    addingcount = 0
+    with open (shuttletxt,'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            found2 = False
+            line.replace('1','0')
+            with open(routestxt,'r') as file:
+                linescheck = file.readlines()
+                for line1 in linescheck:
+                    if line in line1:
+                        found2 = True
+            if found2 == False:
+                addingcount += 1
+                with open(routestxt,'a') as file:
+                    line = line.replace('1','0')
+                    file.write(line)
+    if addingcount > 0:
+        print(f"\nThanks! Succesfully imported {addingcount} routes!")
+        with open(routestxt,'a') as file:
+            file.write("\n")
+    else:
+        print("\nNo routes applicable to add!")
+
 
 
 # - END OF FUNCTIONS -
@@ -972,12 +1000,13 @@ with open(logtxt,'r') as file:
         if 'INIT' in line:
             welcome()
             firstTime=1
+
 if firstTime != 1:
     print("Welcome to Routelog!")
 
 if valid == 1:
     while True:
-        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n\n") # beautifully simple
+        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n11 - Data settings\n\n") # beautifully simple
         if choice == '1':
             add()
         elif choice == '2':
@@ -998,6 +1027,10 @@ if valid == 1:
             aircsel()
         elif choice == '10':
             setFIR()
+        elif choice == '11':
+            setchoice = input("\n1 - Import shuttle\n\n")
+            if setchoice == '1':
+                importing()
         elif choice == 'firs':
             print('\nCurrently supported FIRs:\n\nEBBU - Brussels\nEHAA - Amsterdam\nGCCC - Canary Islands\nGOOO - Nouakchott\nGVSC - Cape Verde\nLCCC - Nicosia')
         else:
