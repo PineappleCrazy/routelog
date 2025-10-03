@@ -16,21 +16,21 @@ Download the latest [shuttle](https://github.com/PineappleCrazy/routelog/blob/ma
 We proudly (fully) support 57 aerodromes over 14 different countries.
 
 **Countries fully supported:**
-+ Belgium
-+ Cape Verde
-+ Gambia
-+ Guinea
-+ Guinea-Bissau
-+ Luxembourg
-+ Mauritania
-+ Netherlands
-+ Senegal
-+ Sierra Leone f
-
+> + Belgium
+> + Cape Verde
+> + Gambia
+> + Guinea
+> + Guinea-Bissau
+> + Luxembourg
+> + Mauritania
+> + Netherlands
+> + Senegal
+> + Sierra Leone
+> 
 **Countries partically supported:**
-+ Morocco
-+ Portugal
-+ Spain
+> + Morocco
+> + Portugal
+> + Spain
 
 
 ### Upon running, you will be prompted with all functions available. There is a guide to each below.
