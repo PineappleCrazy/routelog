@@ -497,6 +497,7 @@
     "lfrr_ctr": ["LFRB", "LFRK", "LFRN", "LFRS"],
     "lfrs_app": ["LFRS"],
     "lfsb_app": ["LFSB"],
+    "lgav_dep": ["LGAV", "LGMK"],
     "lgav_w_app": ["LGAV", "LGMK"],
     "lggg_ctr": ["LGAV", "LGBL", "LGIO", "LGIR", "LGKF", "LGKL", "LGKO", "LGKP", "LGKR", "LGKV", "LGLM", "LGMK", "LGMT", "LGPA", "LGPZ", "LGRP", "LGRX", "LGSA", "LGSK", "LGSM", "LGSR", "LGSY", "LGTS", "LGZA"],
     "lggg_mil_ctr": ["LGAV", "LGIR", "LGKP", "LGPA", "LGSA", "LGSR", "LGST"],
