@@ -188,10 +188,10 @@ def add():
             b787 = input("B787?: ")
             if b787 == 'yes':
                 adding += ',b7870'
-        if 'e145' in airclist:
-            e145 = input("E145?: ")
-            if e145 == 'yes':
-                adding += ',e1450'
+        if 'ex45' in airclist:
+            ex45 = input("E145?: ")
+            if ex45 == 'yes':
+                adding += ',ex450'
         if 'ejet' in airclist:
             ejet = input("Ejet?: ")
             if ejet == 'yes':
@@ -323,9 +323,9 @@ def display():
                     print('B787 - Incomplete')
                 if 'b7871' in grab:
                     print('B787 - Complete')
-                if 'e1450' in grab:
+                if 'ex450' in grab:
                     print('E145 - Incomplete')
-                if 'e1451' in grab:
+                if 'ex451' in grab:
                     print('E145 - Complete')
                 if 'ejet0' in grab:
                     print('Ejet - Incomplete')
@@ -555,11 +555,11 @@ def viewall():
                 if 'b7871' in grab:
                     print('B787 - Complete')
                     allRts += 1
-                if 'e1450' in grab:
+                if 'ex450' in grab:
                     print('E145 - Incomplete')
                     allRts += 1
                     incompRts += 1
-                if 'e1451' in grab:
+                if 'ex451' in grab:
                     print('E145 - Complete')
                     allRts += 1
                 if 'ejet0' in grab:
@@ -805,11 +805,11 @@ def special():
                     if 'b7871' in grab and 'b787' in airclist:
                         print('B787 - Complete')
                         allRts += 1
-                    if 'e1450' in grab and 'e145' in airclist:
+                    if 'ex450' in grab and 'e145' in airclist:
                         print('E145 - Incomplete')
                         allRts += 1
                         incompRts += 1
-                    if 'e1451' in grab and 'e145' in airclist:
+                    if 'ex451' in grab and 'ex45' in airclist:
                         print('E145 - Complete')
                         allRts += 1
                     if 'ejet0' in grab and 'ejet' in airclist:
@@ -897,8 +897,8 @@ def aircsel():
     b787 = input("B787?: ")
     if b787 == 'y':
         airclist += 'b787'
-    e145 = input("Embraer 145?: ")
-    if e145 == 'y':
+    ex45 = input("Embraer 145?: ")
+    if ex45 == 'y':
         airclist += 'e145'
     ejet = input("Embraer 170/5/90/95?: ")
     if ejet == 'y':
@@ -952,6 +952,7 @@ def setFIR():
 def welcome():
     print('Welcome to Routelog! - your comprehensive tracker of all flight progress\n\nTo begin, please select your wanted aircraft types using the -9- function you will be prompted with next\n')
     print("Files attached such as 'UsageNotes.txt' and 'README.md' provide full rundowns of the program and its more complex functions.\n\nAll functions rely on ICAO codes. Further breakdowns are located in the text files attached\nThanks,")
+    print("\nYou are currently on NO routedata. To use our official data, import through the shuttle (follow funct. 11)\n")
     a = input('\nPress ENTER to continue: ')
     with open(logtxt,'w') as file:
         file.write("entry")
@@ -959,6 +960,7 @@ def welcome():
 
 
 def importing():
+    print("\nImporting. This may take anywhere from an instant to a minute or two, depending on the load...")
     addingcount = 0
     with open (shuttletxt,'r') as file:
         lines = file.readlines()
@@ -977,8 +979,6 @@ def importing():
                     file.write(line)
     if addingcount > 0:
         print(f"\nThanks! Succesfully imported {addingcount} routes!")
-        with open(routestxt,'a') as file:
-            file.write("\n")
     else:
         print("\nNo routes applicable to add!")
 
