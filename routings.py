@@ -7,13 +7,13 @@ import shutil # module to backup files
 import os
 import json
 
-citypath = os.path.join(os.path.dirname(__file__), 'cityref.json') # finding references folder to fetch json files
-countrypath = os.path.join(os.path.dirname(__file__), 'countryref.json')
-firpath = os.path.join(os.path.dirname(__file__), 'firref.json')
-airlpath = os.path.join(os.path.dirname(__file__), 'airlref.json')
-aircpath = os.path.join(os.path.dirname(__file__), 'aircref.json')
-routenumtxt = os.path.join(os.path.dirname(__file__), 'routenum.txt')
+citypath = os.path.join(os.path.dirname(__file__), 'references', 'cityref.json') # finding references folder to fetch json files
+countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.json')
+firpath = os.path.join(os.path.dirname(__file__), 'references', 'firref.json')
+airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
+aircpath = os.path.join(os.path.dirname(__file__), 'references', 'aircref.json')
 
+routenumtxt = os.path.join(os.path.dirname(__file__), 'routenum.txt')
 routestxt = os.path.join(os.path.dirname(__file__), 'routes.txt') # letting silly python find its text files
 shuttletxt = os.path.join(os.path.dirname(__file__), 'shuttle.txt') # letting silly python find its text files
 backuptxt = os.path.join(os.path.dirname(__file__), 'backup.txt')
