@@ -20,17 +20,18 @@ We proudly (fully) support 57 aerodromes over 14 different countries.
 > + Belgium
 > + Cape Verde
 > + Gambia
+> + Gibraltar
 > + Guinea
 > + Guinea-Bissau
 > + Luxembourg
 > + Mauritania
+> + Morocco
 > + Senegal
 > + Sierra Leone
 > 
 **Countries partially supported:**
-> + Morocco
 > + Netherlands
-> + Portugal (madeira + azores only)
+> + Portugal
 > + Spain (canaries only)
 
 **Countries coming soon:**

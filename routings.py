@@ -611,7 +611,7 @@ def aircsel():
         airclist += 'b787'
     ex45 = input("Embraer 145?: ")
     if ex45 == 'y':
-        airclist += 'e145'
+        airclist += 'ex45'
     ejet = input("Embraer 170/5/90/95?: ")
     if ejet == 'y':
         airclist += 'ejet'
