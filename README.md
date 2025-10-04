@@ -8,6 +8,11 @@ We currently have over 2,000 flights stored, allowing you to keep track of and a
 Download the latest [shuttle](https://github.com/PineappleCrazy/routelog/blob/main/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
 
 
+### To run:
+Run the [batch file](https://github.com/PineappleCrazy/Routelog/blob/main/_routelog.bat)
+
+
+
 ### Where is supported?
 We proudly (fully) support 57 aerodromes over 14 different countries.
 
