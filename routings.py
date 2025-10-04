@@ -425,9 +425,7 @@ def viewall():
                         print("\n - ")
     if allRts > 0:
         print(f'\n{allRts-incompRts} flights completed of {allRts} total.\n')
-        float(allRts)
-        float(incompRts)
-        print(f'% completion: {round(100-((100/allRts)*incompRts),2)}\n\nRoutes for {localFIR.upper()} FIR') # nice little stats after the spewage.. fun. Gives total and percentage for now
+        print(f'% completion: {100*((allRts-incompRts)/allRts)}\n\nRoutes for {localFIR.upper()} FIR') # nice little stats after the spewage.. fun. Gives total and percentage for now
     else:
         print("No applicable routes!")
                     
@@ -564,9 +562,7 @@ def special():
 
         if allRts > 0:
             print(f'\n{allRts-incompRts} flights completed of {allRts} total.\n')
-            float(allRts)
-            float(incompRts)
-            print(f'% completion: {round(100-((100/allRts)*incompRts),2)}\n\nRoutes for {localFIR.upper()} FIR')
+            print(f'% completion: {100*((allRts-incompRts)/allRts)}\n\nRoutes for {localFIR.upper()} FIR')
         else:
             print("No applicable routes!")
 
@@ -634,36 +630,40 @@ def aircsel():
 def setFIR():
     FIRentry = input("\nEnter 4-digit FIR: ")
     if FIRentry == 'any':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('unselected')
             print('\nRemoved your home FIR!\nRestart program for changes to take effect\n')
     elif FIRentry == 'ebbu' or FIRentry == 'EBBU':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('ebbu')
-            print('\nSet your home FIR to EBBU - Bedankt!\nRestart program for changes to take effect\n')
+            print('\nSet your home FIR to EBBU - Thanks!\nRestart program for changes to take effect\n')
     elif FIRentry == 'ehaa' or FIRentry == 'EHAA':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('ehaa')
-            print('\nSet your home FIR to EHAA - Bedankt!\nRestart program for changes to take effect\n')
+            print('\nSet your home FIR to EHAA - Thanks!\nRestart program for changes to take effect\n')
     elif FIRentry == 'gccc' or FIRentry == 'GCCC':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('gccc')
-            print('\nSet your home FIR to GCCC - Gracias!\nRestart program for changes to take effect\n')
+            print('\nSet your home FIR to GCCC - Thanks!\nRestart program for changes to take effect\n')
+    elif FIRentry == 'gmmm' or FIRentry == 'GMMM':
+        with open(firtxt,'w') as file:
+            file.write('gmmm')
+            print('\nSet your home FIR to GMMM - Thanks!\nRestart program for changes to take effect\n')
     elif FIRentry == 'gvsc' or FIRentry == 'GVSC':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('gvsc')
-            print('\nSet your home FIR to GVSC - Obrigado!\nRestart program for changes to take effect\n')
+            print('\nSet your home FIR to GVSC - Thanks!\nRestart program for changes to take effect\n')
     elif FIRentry == 'lccc' or FIRentry == 'LCCC':
-        with open('fir.txt','w') as file:
+        with open(firtxt,'w') as file:
             file.write('lccc')
-            print('\nSet your home FIR to LCCC - Ευχαριστώ!\nRestart program for changes to take effect\n')
+            print('\nSet your home FIR to LCCC - Thanks!\nRestart program for changes to take effect\n')
     else:
         print("FIR entry invalid, or unsupported FIR. Currently supported: EBBU")
 
 
 def welcome():
     print('Welcome to Routelog! - your comprehensive tracker of all flight progress\n\nTo begin, please select your wanted aircraft types using the -9- function you will be prompted with next\n')
-    print("Files attached such as 'UsageNotes.txt' and 'README.md' provide full rundowns of the program and its more complex functions.\n\nAll functions rely on ICAO codes. Further breakdowns are located in the text files attached\nThanks,")
+    print("Function information can be found in README.md\nThanks,")
     print("\nYou are currently on NO routedata. To use our official data, import through the shuttle (follow funct. 11)\n")
     a = input('\nPress ENTER to continue: ')
     with open(logtxt,'w') as file:
