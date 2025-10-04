@@ -13,11 +13,13 @@ firpath = os.path.join(os.path.dirname(__file__), 'references', 'firref.json')
 airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
 aircpath = os.path.join(os.path.dirname(__file__), 'references', 'aircref.json')
 
-routenumtxt = os.path.join(os.path.dirname(__file__), 'routenum.txt')
-routestxt = os.path.join(os.path.dirname(__file__), 'routes.txt') # letting silly python find its text files
-shuttletxt = os.path.join(os.path.dirname(__file__), 'shuttle.txt') # letting silly python find its text files
-backuptxt = os.path.join(os.path.dirname(__file__), 'backup.txt')
-logtxt = os.path.join(os.path.dirname(__file__), 'log.txt')
+routenumtxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routenum.txt') # letting silly python find its text files
+routestxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routes.txt')
+shuttletxt = os.path.join(os.path.dirname(__file__), 'localdata', 'shuttle.txt')
+backuptxt = os.path.join(os.path.dirname(__file__), 'localdata', 'backup.txt')
+logtxt = os.path.join(os.path.dirname(__file__), 'localdata', 'log.txt')
+aircraftseltxt = os.path.join(os.path.dirname(__file__), 'localdata', 'aircsel.txt')
+firtxt = os.path.join(os.path.dirname(__file__), 'localdata', 'fir.txt')
 
 with open(citypath,'r',encoding='utf-8') as i:
     citynames = json.load(i) # fetching cities from json
@@ -33,11 +35,11 @@ with open(aircpath,'r',encoding='utf-8') as i:
 end = 1 # constants, so fun
 valid = 0
 
-with open('aircsel.txt','r') as file:
+with open(aircraftseltxt,'r') as file:
         airclist = str(file.readlines())
         airclist.strip()
 
-with open('fir.txt','r') as file:
+with open(firtxt,'r') as file:
     localFIR = str(file.readlines())
     localFIR = localFIR.strip("[]").strip("'")
 
@@ -630,7 +632,7 @@ def aircsel():
     dx28 = input("DX28?: ")
     if dx28 == 'y':
         airclist += 'dx28'
-    with open('aircsel.txt','w') as file:
+    with open(aircraftseltxt,'w') as file:
         file.write(airclist)
     print("\nSuccess - thanks! To apply, restart program")
 
