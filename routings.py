@@ -20,11 +20,11 @@ backuptxt = os.path.join(os.path.dirname(__file__), 'backup.txt')
 logtxt = os.path.join(os.path.dirname(__file__), 'log.txt')
 
 with open(citypath,'r',encoding='utf-8') as i:
-    citynames = json.load(i) # fetching cities from json to reference in viewing and validation
+    citynames = json.load(i) # fetching cities from json
 with open(countrypath,'r',encoding='utf-8') as i:
-    countryref = json.load(i) # fetching cities from json to reference in viewing and validation
+    countryref = json.load(i) # fetching cities from json
 with open(firpath,'r',encoding='utf-8') as i:
-    firref = json.load(i) # fetching cities from json to reference in viewing and validation
+    firref = json.load(i) # fetching cities from json
 with open(airlpath,'r',encoding='utf-8') as i:
     airlines = json.load(i) # fetching valid airlines from json
 with open(aircpath,'r',encoding='utf-8') as i:
