@@ -59,20 +59,15 @@ def inputVal1(): # secondary function only used selecting airports for searches
     while True:
         user_input = input("\nEnter location (airport or supported grouping): ")
         user_input = user_input.lower()
-        user_input = user_input.replace('á', 'a') # standardising inputs, specifically for city names
-        user_input = user_input.replace('ä', 'a')
-        user_input = user_input.replace('å', 'a')
-        user_input = user_input.replace('ă', 'a')
-        user_input = user_input.replace('é', 'e')
-        user_input = user_input.replace('ë', 'e')
-        user_input = user_input.replace('è', 'e')
-        user_input = user_input.replace('í', 'i')
-        user_input = user_input.replace('ī', 'i')
-        user_input = user_input.replace('ö', 'o')
-        user_input = user_input.replace('ø', 'o')
-        user_input = user_input.replace('ü', 'u')
-        user_input = user_input.replace('ș', 's')
-        user_input = user_input.replace('š', 's')
+        char_map = {
+            'á': 'a', 'ä': 'a', 'å': 'a', 'ă': 'a',
+            'é': 'e', 'ë': 'e', 'è': 'e',
+            'í': 'i', 'ī': 'i',
+            'ö': 'o', 'ø': 'o',
+            'ü': 'u',
+            'ș': 's', 'š': 's'
+        }
+        user_input = user_input.translate(str.maketrans(char_map))
         if user_input in citynames or user_input == 'null': # a user COULD enter 'null' and it would get logged... haha.. just dont
             return user_input
         elif user_input in countryref:
@@ -90,7 +85,7 @@ def airlVal():
         if user_input in airlines or user_input == 'null':
             return user_input
         else:
-            print("Invalid input. Please enter a valid airline ICAO code. See UsageNotes.txt for more info.")
+            print("Invalid input. Please enter a valid airline ICAO code.")
 
 def aircVal():
     while True:
@@ -99,7 +94,7 @@ def aircVal():
         if user_input in aircrafts or user_input == 'null':
             return user_input
         else:
-            print("Invalid input. Please enter a valid aircraft type code. See UsageNotes.txt for more info.")
+            print("Invalid input. Please enter a valid aircraft type code.")
             # they can read - lovely. might do that.. once
 
 def numVal(): # as of now acts as presence check.. might make more complex later, eg making it fit with airline
