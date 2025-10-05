@@ -5,7 +5,7 @@ We currently have over 2,000 flights stored, allowing you to keep track of and a
 
 
 ### To import our current, *official* routes:
-Download the latest [shuttle](https://github.com/PineappleCrazy/routelog/blob/main/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
+Download the latest [shuttle](https://github.com/PineappleCrazy/Routelog/blob/main/localdata/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
 
 
 ### To run:
