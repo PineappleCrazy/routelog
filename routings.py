@@ -6,6 +6,7 @@
 import shutil # module to backup files
 import os
 import json
+from PIL import Image
 
 citypath = os.path.join(os.path.dirname(__file__), 'references', 'cityref.json') # finding references folder to fetch json files
 countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.json')
@@ -34,6 +35,9 @@ with open(aircpath,'r',encoding='utf-8') as i:
  
 end = 1 # constants, so fun
 valid = 0
+imageAirp = ''
+imageAirl = ''
+currentImage = ''
 
 with open(aircraftseltxt,'r') as file:
         airclist = str(file.readlines())
@@ -42,6 +46,19 @@ with open(aircraftseltxt,'r') as file:
 with open(firtxt,'r') as file:
     localFIR = str(file.readlines())
     localFIR = localFIR.strip("[]").strip("'")
+
+def selectImage():
+    imageAirp = inputVal()
+    imageAirp = imageAirp.upper()
+    imageAirl = airlVal()
+    imageAirl = imageAirl.upper()
+    fileLocation = os.path.join(os.path.dirname(__file__), 'images', 'portlayouts', f'{imageAirp}{imageAirl}.png') # compiles file name to search for
+    try: # looks for image
+        currentImage = Image.open(fileLocation)
+        print(f"\nShowing gate info for {imageAirl} at {imageAirp}... window opening now")
+        currentImage.show()
+    except FileNotFoundError:
+        print("\nGate info unavailable, or inputs invalid!")
 
 def backup():
     shutil.copy(routestxt, backuptxt) # copying routes to backup after every modification
@@ -664,7 +681,7 @@ def setFIR():
 def welcome():
     print('Welcome to Routelog! - your comprehensive tracker of all flight progress\n\nTo begin, please select your wanted aircraft types using the -9- function you will be prompted with next\n')
     print("Function information can be found in README.md\nThanks,")
-    print("\nYou are currently on NO routedata. To use our official data, import through the shuttle (follow funct. 11)\n")
+    print("\nYou are currently on NO routedata. To use our official data, import through the shuttle (follow funct. 12)\n")
     a = input('\nPress ENTER to continue: ')
     with open(logtxt,'w') as file:
         file.write("entry")
@@ -718,7 +735,7 @@ if firstTime != 1:
 
 if valid == 1:
     while True:
-        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n11 - Data settings\n\n") # beautifully simple
+        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n11 - Gatefinder\n\n12 - Data settings\n\n") # beautifully simple
         if choice == '1':
             add()
         elif choice == '2':
@@ -740,6 +757,8 @@ if valid == 1:
         elif choice == '10':
             setFIR()
         elif choice == '11':
+            selectImage()
+        elif choice == '12':
             setchoice = input("\n1 - Import shuttle\n\n")
             if setchoice == '1':
                 importing()

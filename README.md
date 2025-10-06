@@ -14,7 +14,7 @@ Run the [batch file](https://github.com/PineappleCrazy/Routelog/blob/main/_route
 
 
 ### Where is supported?
-We proudly (fully) support 57 aerodromes over 14 different countries.
+We proudly (fully) support 74 aerodromes over 15 different countries.
 
 **Countries fully supported:**
 > + Belgium
@@ -79,7 +79,10 @@ This function lets you choose which aircraft you'll be prompted with when adding
 ### 10 - Select Home FIR
 Routes will only be displayed if they are to/from your home FIR. Enter `any` to disregard this. Your home FIR can be changed at any time.
 
-### 11 - Data Settings
+### Gatefinder
+This function prompts you with a parking chart for a selected airport and airline. Their primary parking at this airport is displayed.
+
+### 12 - Data Settings
 Import routedata from shuttles provided
 
 ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - 
