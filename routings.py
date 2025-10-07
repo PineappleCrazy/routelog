@@ -6,13 +6,13 @@
 import shutil # module to backup files
 import os
 import json
-from PIL import Image
+from functions import search_navaid, selectImage, inputVal, inputVal1, airlVal, aircVal, numVal
 
 citypath = os.path.join(os.path.dirname(__file__), 'references', 'cityref.json') # finding references folder to fetch json files
 countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.json')
 firpath = os.path.join(os.path.dirname(__file__), 'references', 'firref.json')
-airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
 aircpath = os.path.join(os.path.dirname(__file__), 'references', 'aircref.json')
+airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
 
 routenumtxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routenum.txt') # letting silly python find its text files
 routestxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routes.txt')
@@ -28,10 +28,10 @@ with open(countrypath,'r',encoding='utf-8') as i:
     countryref = json.load(i) # fetching cities from json
 with open(firpath,'r',encoding='utf-8') as i:
     firref = json.load(i) # fetching cities from json
-with open(airlpath,'r',encoding='utf-8') as i:
-    airlines = json.load(i) # fetching valid airlines from json
 with open(aircpath,'r',encoding='utf-8') as i:
     aircrafts = json.load(i) # fetching valid aircraft from json
+with open(airlpath,'r',encoding='utf-8') as i:
+    airlines = json.load(i) # fetching valid airlines from json
  
 end = 1 # constants, so fun
 valid = 0
@@ -47,87 +47,16 @@ with open(firtxt,'r') as file:
     localFIR = str(file.readlines())
     localFIR = localFIR.strip("[]").strip("'")
 
-def selectImage():
-    imageAirp = inputVal()
-    imageAirp = imageAirp.upper()
-    imageAirl = airlVal()
-    imageAirl = imageAirl.upper()
-    fileLocation = os.path.join(os.path.dirname(__file__), 'images', 'portlayouts', f'{imageAirp}{imageAirl}.png') # compiles file name to search for
-    try: # looks for image
-        currentImage = Image.open(fileLocation)
-        print(f"\nShowing gate info for {imageAirl} at {imageAirp}... window opening now")
-        currentImage.show()
-    except FileNotFoundError:
-        print("\nGate info unavailable, or inputs invalid!")
-
 def backup():
     shutil.copy(routestxt, backuptxt) # copying routes to backup after every modification
 
-def inputVal():
-    while True:
-        user_input = input("\nEnter airport: ")
-        user_input = user_input.lower()
-        if user_input in citynames or user_input == 'null': # a user COULD enter 'null' and it would get logged... haha.. just dont
-            return user_input
-        else:
-            print("Invalid input. Please enter a valid airport ICAO code.") # should be self explanatory
-
-def inputVal1(): # secondary function only used selecting airports for searches
-    while True:
-        user_input = input("\nEnter location (airport or supported grouping): ")
-        user_input = user_input.lower()
-        char_map = {
-            'á': 'a', 'ä': 'a', 'å': 'a', 'ă': 'a',
-            'é': 'e', 'ë': 'e', 'è': 'e',
-            'í': 'i', 'ī': 'i',
-            'ö': 'o', 'ø': 'o',
-            'ü': 'u',
-            'ș': 's', 'š': 's'
-        }
-        user_input = user_input.translate(str.maketrans(char_map))
-        if user_input in citynames or user_input == 'null': # a user COULD enter 'null' and it would get logged... haha.. just dont
-            return user_input
-        elif user_input in countryref:
-            return countryref[user_input]
-        else:
-            print("Invalid input. Please enter a valid airport ICAO code.") # should be self explanatory
-
 def firVal(): # checking if an airport of home FIR selected
     return firref[localFIR]
-
-def airlVal():
-    while True:
-        user_input = input("\nEnter airline: ")
-        user_input = user_input.lower()
-        if user_input in airlines or user_input == 'null':
-            return user_input
-        else:
-            print("Invalid input. Please enter a valid airline ICAO code.")
-
-def aircVal():
-    while True:
-        user_input = input("\nEnter aircraft: ")
-        user_input = user_input.lower()
-        if user_input in aircrafts or user_input == 'null':
-            return user_input
-        else:
-            print("Invalid input. Please enter a valid aircraft type code.")
-            # they can read - lovely. might do that.. once
-
-def numVal(): # as of now acts as presence check.. might make more complex later, eg making it fit with airline
-    while True:
-        user_input = input("\nEnter flight number: ")
-        user_input = user_input.upper()
-        if len(user_input) > 2:
-            return user_input
-        else:
-            print("Invalid input. Ensure at least 3 characters.")
 
 def add():
     cont = 1
     dep = inputVal()
     arr = inputVal()
-    # using logs like this is disgustingly inefficient.. it's a text file, they'll cope
     
     with open(logtxt,'w') as file:
         logwrite = (dep+'\n'+arr)
@@ -141,10 +70,6 @@ def add():
         routeid = [line.strip() for line in file.readlines()]
     airl = airlVal()
     adding = ''.join(routeid) + airl
-
-    # oh god it's disgusting.. might be made more efficient by the next century
-
-
     with open(routestxt,'r') as file:
         lines = file.readlines()
         for line in lines:
@@ -735,7 +660,7 @@ if firstTime != 1:
 
 if valid == 1:
     while True:
-        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n11 - Gatefinder\n\n12 - Data settings\n\n") # beautifully simple
+        choice = input("\n - - - - - - - - - - - - -\n\nWould you like to: \n\n1 - Add a route\n2 - View a specific route\n3 - Mark flight as complete\n4 - Mark flight as uncomplete\n5 - View all routes\n6 - View filtered routes\n7 - Add an aircraft to a route\n8 - Add a route number\n9 - Select your aircraft\n10 - Select your based FIR\n\nAdditional Programs:\n11 - Gatefinder\n12 - Navaid Info\n\nExtras:\n13 - Data settings\n\n") # beautifully simple
         if choice == '1':
             add()
         elif choice == '2':
@@ -759,11 +684,13 @@ if valid == 1:
         elif choice == '11':
             selectImage()
         elif choice == '12':
+            search_navaid()
+        elif choice == '13':
             setchoice = input("\n1 - Import shuttle\n\n")
             if setchoice == '1':
                 importing()
         elif choice == 'firs':
-            print('\nCurrently supported FIRs:\n\nEBBU - Brussels\nEHAA - Amsterdam\nGCCC - Canary Islands\nGOOO - Nouakchott\nGVSC - Cape Verde\nLCCC - Nicosia')
+            print('\nCurrently supported FIRs:\n\nEBBU - Brussels\nEHAA - Amsterdam\nGCCC - Canary Islands\nGOOO - Nouakchott\nGVSC - Cape Verde')
         else:
             print('\nPlease enter a number as displayed above.') # taking choices for function
 

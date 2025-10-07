@@ -1,0 +1,380 @@
+{
+    "afi" : {
+        "name": "Affligem",
+        "type": "VORDME",
+        "freq": "114.9 MHz",
+        "country": "be"
+    },
+    "ald" : {
+        "name": "Alderney",
+        "type": "NDB",
+        "freq": "383",
+        "country": "uk"
+    },
+    "ant" : {
+        "name": "Antwerpen",
+        "type": "VORDME",
+        "freq": "113.5 MHz",
+        "country": "be"
+    },
+    "bal" : {
+        "name": "Baldonnel",
+        "type": "VORDME",
+        "freq": "115.8 MHz",
+        "country": "ie"
+    },
+    "bbe" : {
+        "name": "Beauvechain",
+        "type": "TACAN",
+        "freq": "116.0 MHz",
+        "country": "be"
+    },
+    "bbl" : {
+        "name": "Kleine Brogel",
+        "type": "TACAN",
+        "freq": "109.6 MHz",
+        "country": "be"
+    },
+    "bfs" : {
+        "name": "Florennes",
+        "type": "TACAN",
+        "freq": "111.5 MHz",
+        "country": "be"
+    },
+    "bub" : {
+        "name": "Brussels",
+        "type": "VORDME",
+        "freq": "114.6 MHz",
+        "country": "be"
+    },
+    "bun" : {
+        "name": "Bruno",
+        "type": "VORDME",
+        "freq": "110.6 MHz",
+        "country": "be"
+    },
+    "cc" : {
+        "name": "Charleroi",
+        "type": "LCTR/NDB",
+        "freq": "389 KHz",
+        "country": "be"
+    },
+    "cfn" : {
+        "name": "Donegal",
+        "type": "NDB",
+        "freq": "361 KHz",
+        "country": "ie"
+    },
+    "civ" : {
+        "name": "Chièvres",
+        "type": "VOR",
+        "freq": "113.2 MHz",
+        "country": "be"
+    },
+    "cml" : {
+        "name": "Clonmel",
+        "type": "NDB",
+        "freq": "387 KHz",
+        "country": "ie"
+    },
+    "coa" : {
+        "name": "Costa",
+        "type": "VORDME",
+        "freq": "110.05 MHz",
+        "country": "be"
+    },
+    "con" : {
+        "name": "Connaught",
+        "type": "VORDME",
+        "freq": "117.4 MHz",
+        "country": "ie"
+    },
+    "crk" : {
+        "name": "Cork",
+        "type": "VORDME",
+        "freq": "114.6 MHz",
+        "country": "ie"
+    },
+    "crn" : {
+        "name": "Galway",
+        "type": "NDB",
+        "freq": "342 KHz",
+        "country": "ie"
+    },
+    "dap" : {
+        "name": "Dublin",
+        "type": "VORDME",
+        "freq": "111.2 MHz",
+        "country": "ie"
+    },
+    "dd" : {
+        "name": "Oostende",
+        "type": "NDB",
+        "freq": "353 KHz",
+        "country": "be"
+    },
+    "dik" : {
+        "name": "Diekirch",
+        "type": "VORDME",
+        "freq": "114.4 MHz",
+        "country": "lu"
+    },
+    "dub" : {
+        "name": "Dublin",
+        "type": "VORDME",
+        "freq": "114.9 MHz",
+        "country": "ie"
+    },
+    "elu" : {
+        "name": "Luxembourg",
+        "type": "NDB",
+        "freq": "369 KHz",
+        "country": "lu"
+    },
+    "ens" : {
+        "name": "Ennis",
+        "type": "NDB",
+        "freq": "352 KHz",
+        "country": "ie"
+    },
+    "flo" : {
+        "name": "Flora",
+        "type": "VORDME",
+        "freq": "112.05 MHz",
+        "country": "be"
+    },
+    "foy" : {
+        "name": "Foynes",
+        "type": "NDB",
+        "freq": "395 KHz",
+        "country": "ie"
+    },
+    "gar" : {
+        "name": "Garristown",
+        "type": "NDB",
+        "freq": "407 KHz",
+        "country": "ie"
+    },
+    "gmn" : {
+        "name": "Gormanston",
+        "type": "NDBDME",
+        "freq": "334 KHz",
+        "country": "ie"
+    },
+    "grb" : {
+        "name": "Guernsey",
+        "type": "NDB",
+        "freq": "361 KHz",
+        "country": "uk"
+    },
+    "gsy" : {
+        "name": "Gosly",
+        "type": "VORDME",
+        "freq": "115.7 MHz",
+        "country": "be"
+    },
+    "gtq" : {
+        "name": "Grostenquin",
+        "type": "VORDME",
+        "freq": "111.25 MHz",
+        "country": "be"
+    },
+    "gur" : {
+        "name": "Guernsey",
+        "type": "VORDME",
+        "freq": "109.4 MHz",
+        "country": "uk"
+    },
+    "guy" : {
+        "name": "Guernsey",
+        "type": "NDB",
+        "freq": "361 KHz",
+        "country": "uk"
+    },
+    "hul" : {
+        "name": "Huldenberg",
+        "type": "VORDME",
+        "freq": "117.55 MHz",
+        "country": "be"
+    },
+    "id" : {
+        "name": "Dublin",
+        "type": "DME",
+        "freq": "108.9 MHz",
+        "country": "ie"
+    },
+    "jsy" : {
+        "name": "Jersey",
+        "type": "VORDME",
+        "freq": "112.2 MHz",
+        "country": "uk"
+    },
+    "ker" : {
+        "name": "Kerry",
+        "type": "NDB",
+        "freq": "334 KHz",
+        "country": "ie"
+    },
+    "kly" : {
+        "name": "Killiney",
+        "type": "NDB",
+        "freq": "378 KHz",
+        "country": "ie"
+    },
+    "knk" : {
+        "name": "Connaught",
+        "type": "NDB",
+        "freq": "364 KHz",
+        "country": "ie"
+    },
+    "kok" : {
+        "name": "Koksy",
+        "type": "VORTAC",
+        "freq": "114.5 MHz",
+        "country": "be"
+    },
+    "lge" : {
+        "name": "Liège",
+        "type": "VORDME",
+        "freq": "115.45 MHz",
+        "country": "be"
+    },
+    "lno" : {
+        "name": "Onlo",
+        "type": "VORDME",
+        "freq": "112.8 MHz",
+        "country": "be"
+    },
+    "lux" : {
+        "name": "Luxembourg",
+        "type": "VORDME",
+        "freq": "112.25 MHz",
+        "country": "lu"
+    },
+    "mak" : {
+        "name": "Mackel",
+        "type": "NDB",
+        "freq": "361 KHz",
+        "country": "be"
+    },
+    "nik" : {
+        "name": "Nicky",
+        "type": "VORDME",
+        "freq": "117.4 MHz",
+        "country": "be"
+    },
+    "ob" : {
+        "name": "Brussels",
+        "type": "NDB",
+        "freq": "293 KHz",
+        "country": "be"
+    },
+    "oe" : {
+        "name": "Dublin",
+        "type": "NDB",
+        "freq": "316 KHz",
+        "country": "ie"
+    },
+    "ok" : {
+        "name": "Connaught",
+        "type": "NDB",
+        "freq": "398 KHz",
+        "country": "ie"
+    },
+    "okt" : {
+        "name": "Kortrijk",
+        "type": "NDB",
+        "freq": "371 KHz",
+        "country": "be"
+    },
+    "onc" : {
+        "name": "Charleroi",
+        "type": "NDB",
+        "freq": "323 KHz",
+        "country": "be"
+    },
+    "onl" : {
+        "name": "Liège",
+        "type": "NDB",
+        "freq": "290 KHz",
+        "country": "be"
+    },
+    "ono" : {
+        "name": "Oostende",
+        "type": "NDB",
+        "freq": "400 KHz",
+        "country": "be"
+    },
+    "ont" : {
+        "name": "Kleine Brogel",
+        "type": "NDB",
+        "freq": "431 KHz",
+        "country": "be"
+    },
+    "onw" : {
+        "name": "Antwerpen",
+        "type": "NDB",
+        "freq": "355 KHz",
+        "country": "be"
+    },
+    "op" : {
+        "name": "Dublin",
+        "type": "NDB",
+        "freq": "397 KHz",
+        "country": "ie"
+    },
+    "oz" : {
+        "name": "Brussels",
+        "type": "NDB",
+        "freq": "314 KHz",
+        "country": "be"
+    },
+    "sha" : {
+        "name": "Shannon",
+        "type": "VORDME",
+        "freq": "113.3 MHz",
+        "country": "ie"
+    },
+    "slg" : {
+        "name": "Sligo",
+        "type": "NDB",
+        "freq": "384 KHz",
+        "country": "ie"
+    },
+    "slv" : {
+        "name": "Spa",
+        "type": "NDB",
+        "freq": "387 KHz",
+        "country": "be"
+    },
+    "spi" : {
+        "name": "Sprimont",
+        "type": "VORDME",
+        "freq": "113.1 MHz",
+        "country": "be"
+    },
+    "rsh" : {
+        "name": "Rush",
+        "type": "NDB",
+        "freq": "326 KHz",
+        "country": "ie"
+    },
+    "wlu" : {
+        "name": "Luxembourg",
+        "type": "NDB",
+        "freq": "346 KHz",
+        "country": "lu"
+    },
+    "wst" : {
+        "name": "Weston",
+        "type": "VORDME",
+        "freq": "114.7 MHz",
+        "country": "ie"
+    },
+    "wtd" : {
+        "name": "Waterford",
+        "type": "NDB",
+        "freq": "368 KHz",
+        "country": "ie"
+    }
+}

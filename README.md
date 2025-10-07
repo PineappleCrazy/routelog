@@ -79,10 +79,16 @@ This function lets you choose which aircraft you'll be prompted with when adding
 ### 10 - Select Home FIR
 Routes will only be displayed if they are to/from your home FIR. Enter `any` to disregard this. Your home FIR can be changed at any time.
 
+## Additional Programs / Settings:
+
 ### Gatefinder
 This function prompts you with a parking chart for a selected airport and airline. Their primary parking at this airport is displayed.
+Currently supported:   `ELLX`
 
-### 12 - Data Settings
+### Navaid Info
+This function provides you with information on Navaids based on their identifier given. It provides a name, country and frequency.
+
+### Data Settings
 Import routedata from shuttles provided
 
 ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - ~ - 
