@@ -84,10 +84,13 @@ def airlVal():
 def search_navaid():
     navaid = input("\nEnter navaid identifier: \n\n")
     navaid = navaid.lower()
-    print(f"\n{navaids[f"{navaid}"]["name"]} | {navaids[f"{navaid}"]["type"]}")
-    country_id = navaids[f"{navaid}"]["country"]
-    print(country_names[country_id])
-    print(f"{navaids[f"{navaid}"]["freq"]}")
+    try:
+        print(f"\n{navaids[f"{navaid}"]["name"]} | {navaids[f"{navaid}"]["type"]}")
+        country_id = navaids[f"{navaid}"]["country"]
+        print(country_names[country_id])
+        print(f"{navaids[f"{navaid}"]["freq"]}")
+    except KeyError:
+        print("\nNavaid info unavailable, or inputs invalid!")
 
 def selectImage():
     imageAirp = inputVal()

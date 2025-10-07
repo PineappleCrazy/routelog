@@ -1,8 +1,5 @@
 # --- WELCOME ---
 
-# Please DO NOT TOUCH unless you know what you're doing.
-# I've vaguely commented the functions of sections.. but you'll need to reach out for a proper breakdown.
-
 import shutil # module to backup files
 import os
 import json

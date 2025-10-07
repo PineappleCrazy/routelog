@@ -3,6 +3,7 @@
 This nifty program stores your routes and completion progress, allowing you to add and manage routes seamlessly.
 We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals
 
+For additional programs such as **gatefinder** and **navaid info**, view below function guides.
 
 ### To import our current, *official* routes:
 Download the latest [shuttle](https://github.com/PineappleCrazy/Routelog/blob/main/localdata/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
@@ -10,7 +11,6 @@ Download the latest [shuttle](https://github.com/PineappleCrazy/Routelog/blob/ma
 
 ### To run:
 Run the [batch file](https://github.com/PineappleCrazy/Routelog/blob/main/_routelog.bat)
-
 
 
 ### Where is supported?
