@@ -3,7 +3,7 @@
 This nifty program stores your routes and completion progress, allowing you to add and manage routes seamlessly.
 We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals
 
-For additional programs such as **gatefinder** and **navaid info**, view below function guides.
+For additional programs such as **gatefinder** and **navaid info**, view below function guides
 
 ### To import our current, *official* routes:
 Download the latest [shuttle](https://github.com/PineappleCrazy/Routelog/blob/main/localdata/shuttle.txt) and replace with old shuttle in your respective files. Import through `Data Settings` > `Import Shuttle` 
@@ -86,7 +86,7 @@ This function prompts you with a parking chart for a selected airport and airlin
 Currently supported:   `ELLX`
 
 ### Navaid Info
-This function provides you with information on Navaids based on their identifier given. It provides a name, country and frequency.
+This function provides you with information on Navaids based on their identifier given. It provides a name, country, equiptment type and frequency.
 
 ### Data Settings
 Import routedata from shuttles provided

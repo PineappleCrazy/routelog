@@ -74,85 +74,15 @@ def add():
               print('\nRoute already found!\n')
               cont = 0
     
-    if cont == 1:
+    if cont == 1: 
         print("\nEnter 'yes' to select an aircraft. Press ENTER to skip an aircraft")
-        if 'a220' in airclist:
-            a220 = input("\nA220?: ")
-            if a220 == 'yes':
-                adding += ',a2200'
-        if 'a320' in airclist:
-            a320 = input("A320?: ")
-            if a320 == 'yes':
-                adding += ',a3200'
-        if 'a330' in airclist:
-            a330 = input("A330?: ")
-            if a330 == 'yes':
-                adding += ',a3300'
-        if 'a340' in airclist:
-            a340 = input("A340?: ")
-            if a340 == 'yes':
-                adding += ',a3400'
-        if 'a350' in airclist:
-            a350 = input("A350?: ")
-            if a350 == 'yes':
-                adding += ',a3500'
-        if 'a380' in airclist:
-            a380 = input("A380?: ")
-            if a380 == 'yes':
-                adding += ',a3800'
-        if 'b737' in airclist:
-            b737 = input("B737?: ")
-            if b737 == 'yes':
-                adding += ',b7370'
-        if 'b747' in airclist:
-            b747 = input("B747?: ")
-            if b747 == 'yes':
-                adding += ',b7470'
-        if 'b757' in airclist:
-            b757 = input("B757?: ")
-            if b757 == 'yes':
-                adding += ',b7570'
-        if 'b767' in airclist:
-            b767 = input("B767?: ")
-            if b767 == 'yes':
-                adding += ',b7670'
-        if 'b777' in airclist:
-            b777 = input("B777?: ")
-            if b777 == 'yes':
-                adding += ',b7770'
-        if 'b787' in airclist:
-            b787 = input("B787?: ")
-            if b787 == 'yes':
-                adding += ',b7870'
-        if 'ex45' in airclist:
-            ex45 = input("E145?: ")
-            if ex45 == 'yes':
-                adding += ',ex450'
-        if 'ejet' in airclist:
-            ejet = input("Ejet?: ")
-            if ejet == 'yes':
-                adding += ',ejet0'
-        if 'atrs' in airclist:
-            atrs = input("ATRs?: ")
-            if atrs == 'yes':
-                adding += ',atrs0'
-        if 'crjs' in airclist:
-            crjs = input("CRJs?: ")
-            if crjs == 'yes':
-                adding += ',crjs0'
-        if 'dash' in airclist:
-            dash = input("Dash?: ")
-            if dash == 'yes':
-                adding += ',dash0'
-        if 'dx28' in airclist:
-            dx28 = input("Dorniers?: ")
-            if dx28 == 'yes':
-                adding += ',dx280'
+        for acft in aircrafts:
+            if acft in airclist:
+                addQuery = input(f"{acft.upper()}?: ") # queries to add individual aircraft
+                if addQuery == 'yes':
+                    adding += f',{acft}'
         adding = adding + '\n'
 
-        # shit lets just limit them to 7 type ranges.. more should be easy to do if i want
-        # is a yes/no system good, no - will it stop people from being nonces and putting in invalidities, yes!
-        
         if len(adding) > 13:
             with open(routestxt, 'a') as file:
                 file.write(adding)
@@ -508,61 +438,11 @@ def special():
 def aircsel():
     print("\nType 'y' to select an aircraft. These aircraft will be prompted when adding and viewing routes.")
     airclist = ''
-    a220 = input("\nA220?: ")
-    if a220 == 'y':
-        airclist += 'a220'
-    a320 = input("A320?: ")
-    if a320 == 'y':
-        airclist += 'a320'
-    a330 = input("A330?: ")
-    if a330 == 'y':
-        airclist += 'a330'
-    a340 = input("A340?: ")
-    if a340 == 'y':
-        airclist += 'a340'
-    a350 = input("A350?: ")
-    if a350 == 'y':
-        airclist += 'a350'
-    a380 = input("A380?: ")
-    if a380 == 'y':
-        airclist += 'a380'
-    b737 = input("B737?: ")
-    if b737 == 'y':
-        airclist += 'b737'
-    b747 = input("B747?: ")
-    if b747 == 'y':
-        airclist += 'b747'
-    b757 = input("B757?: ")
-    if b757 == 'y':
-        airclist += 'b757'
-    b767 = input("B767?: ")
-    if b767 == 'y':
-        airclist += 'b767'
-    b777 = input("B777?: ")
-    if b777 == 'y':
-        airclist += 'b777'
-    b787 = input("B787?: ")
-    if b787 == 'y':
-        airclist += 'b787'
-    ex45 = input("Embraer 145?: ")
-    if ex45 == 'y':
-        airclist += 'ex45'
-    ejet = input("Embraer 170/5/90/95?: ")
-    if ejet == 'y':
-        airclist += 'ejet'
-    atrs = input("ATRs?: ")
-    if atrs == 'y':
-        airclist += 'atrs'
-    crjs = input("CRJs?: ")
-    if crjs == 'y':
-        airclist += 'crjs'
-    dash = input("Dash?: ")
-    if dash == 'y':
-        airclist += 'dash'
-    dx28 = input("DX28?: ")
-    if dx28 == 'y':
-        airclist += 'dx28'
-    with open(aircraftseltxt,'w') as file:
+    for acft in aircrafts:
+        addQuery = input(f"{acft.upper()}?: ") # querying on acft to select
+        if addQuery == 'y':
+            airclist += acft
+    with open(aircraftseltxt,'w') as file: # writing selected acft
         file.write(airclist)
     print("\nSuccess - thanks! To apply, restart program")
 

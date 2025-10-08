@@ -536,7 +536,7 @@
     "limj_app": ["LIMJ"],
     "limm_ane_app": ["LIMC", "LIME", "LIML"],
     "limm_ws2_ctr": ["LIMC", "LIME", "LIMF", "LIMJ", "LIML", "LIMZ", "LIPX"],
-    "lipe_app": ["LIPE"],
+    "lipe_app": ["LIPE", "LIPR"],
     "liph_app": ["LIPH"],
     "lipp_ce_ctr": ["LIPB", "LIPE", "LIPH", "LIPK", "LIPQ", "LIPR", "LIPX", "LIPY", "LIPZ"],
     "lipq_ce0_app": ["LIPQ"],
