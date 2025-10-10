@@ -9,6 +9,7 @@ airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
 countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.json')
 firpath = os.path.join(os.path.dirname(__file__), 'references', 'firref.json')
 aircpath = os.path.join(os.path.dirname(__file__), 'references', 'aircref.json')
+iatapath = os.path.join(os.path.dirname(__file__), 'references', 'iatacodes.json')
 
 with open(navaid_data,'r',encoding='utf-8') as i:
     navaids = json.load(i) # fetching navaids from json
@@ -24,15 +25,18 @@ with open(firpath,'r',encoding='utf-8') as i:
     firref = json.load(i) # fetching cities from json
 with open(aircpath,'r',encoding='utf-8') as i:
     aircrafts = json.load(i) # fetching valid aircraft from json
+with open(iatapath,'r',encoding='utf-8') as i:
+    iatacodes = json.load(i) # fetching valid aircraft from json
 
-def numVal(): # as of now acts as presence check.. might make more complex later, eg making it fit with airline
+
+def numVal():
     while True:
         user_input = input("\nEnter flight number: ")
         user_input = user_input.upper()
-        if len(user_input) > 2:
+        if len(user_input) > 2 and len(user_input) < 7 and user_input[0:2].lower() in iatacodes:
             return user_input
         else:
-            print("Invalid input. Ensure at least 3 characters.")
+            print("Invalid input. Ensure a valid route number is entered.")
 
 def inputVal():
     while True:

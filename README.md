@@ -1,7 +1,7 @@
 # Welcome to Routelog!
 
 This nifty program stores your routes and completion progress, allowing you to add and manage routes seamlessly.
-We currently have over 2,000 flights stored, allowing you to keep track of and achieve your flying goals
+We currently have over 3,000 flights stored, allowing you to keep track of and achieve your flying goals
 
 For additional programs such as **gatefinder** and **navaid info**, view below function guides
 
@@ -14,7 +14,7 @@ Run the [batch file](https://github.com/PineappleCrazy/Routelog/blob/main/_route
 
 
 ### Where is supported?
-We proudly (fully) support 74 aerodromes over 15 different countries.
+We proudly (fully) support over 80 aerodromes over 15 different countries.
 
 **Countries fully supported:**
 > + Belgium
@@ -26,19 +26,17 @@ We proudly (fully) support 74 aerodromes over 15 different countries.
 > + Luxembourg
 > + Mauritania
 > + Morocco
+> + Portugal
 > + Senegal
 > + Sierra Leone
 > 
 **Countries partially supported:**
 > + Netherlands
-> + Portugal
-> + Spain (canaries only)
+> + Spain
 
 **Countries coming soon:**
 > + Algeria
 > + Ireland
-> + Portugal
-> + Spain
 
 
 ## Guides:

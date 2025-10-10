@@ -80,7 +80,7 @@ def add():
             if acft in airclist:
                 addQuery = input(f"{acft.upper()}?: ") # queries to add individual aircraft
                 if addQuery == 'yes':
-                    adding += f',{acft}'
+                    adding += f',{acft}0'
         adding = adding + '\n'
 
         if len(adding) > 13:
@@ -427,7 +427,7 @@ def special():
                         else:
                             print(f"The aircraft {aircraft[:-1]} does not exist within the list!")
 
-                        print("\n - ")
+                    print("\n - ")
 
         if allRts > 0:
             print(f'\n{allRts-incompRts} flights completed of {allRts} total.\n')
