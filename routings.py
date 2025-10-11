@@ -414,7 +414,7 @@ def special():
                         print(f"{lists}\n")
 
                     for aircraft in grab.split(",")[1:]:
-                        if aircraft[:-1] in airclist:
+                        if aircraft[:-1] in airclist and (aircraft[:-1] in searchAirc or searchAirc == ','):
                             if aircraft[-1] == "0":
                                 print(f'{aircraft[:-1].upper()} - Incomplete')
                                 allRts += 1
@@ -424,8 +424,6 @@ def special():
                                 allRts += 1
                             else:
                                 print(f"Invalid formating for the aircraft {aircraft[:-1]}")
-                        else:
-                            print(f"The aircraft {aircraft[:-1]} does not exist within the list!")
 
                     print("\n - ")
 
