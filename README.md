@@ -38,6 +38,10 @@ We proudly (fully) support over 90 aerodromes over 15 different countries.
 **Countries coming soon:**
 > + Algeria
 
+![alt text](https://github.com/PineappleCrazy/Routelog/blob/main/images/git/supported.png)
+
+Aerodromes with full coverage, up-to-date as per dataset update 12/10/25
+
 
 ## Guides:
 
