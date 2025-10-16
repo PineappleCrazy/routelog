@@ -14,7 +14,7 @@ Run the [batch file](https://github.com/PineappleCrazy/Routelog/blob/main/_route
 
 
 ### Where is supported?
-We proudly (fully) support over 90 aerodromes over 15 different countries.
+We proudly (fully) support over 100 aerodromes over 16 different countries.
 
 **Countries fully supported:**
 > + Belgium
@@ -28,6 +28,7 @@ We proudly (fully) support over 90 aerodromes over 15 different countries.
 > + Mauritania
 > + Morocco
 > + Portugal
+> + Scotland
 > + Senegal
 > + Sierra Leone
 > 
@@ -37,6 +38,7 @@ We proudly (fully) support over 90 aerodromes over 15 different countries.
 
 **Countries coming soon:**
 > + Algeria
+> + England
 
 ![alt text](https://github.com/PineappleCrazy/Routelog/blob/main/images/git/supported.png)
 
@@ -88,7 +90,7 @@ This function prompts you with a parking chart for a selected airport and airlin
 Currently supported:   `ELLX`
 
 ### Navaid Info
-This function provides you with information on Navaids based on their identifier given. It provides a name, country, equiptment type and frequency.
+This function provides you with information on Navaids based on their identifier given. It provides a name, country, equiptment type and frequency. Currently supported: `Belgium`, `Ireland`, `Luxembourg`
 
 ### Data Settings
 Import routedata from shuttles provided

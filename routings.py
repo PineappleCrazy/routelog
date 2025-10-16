@@ -397,7 +397,7 @@ def special():
                 
                 if line[12:16] in airclist or secondPos in airclist or thirdPos in airclist or fourthPos in airclist or fifthPos in airclist or sixthPos in airclist:
                     grab = line.strip()
-                    title = title = (f"\n{grab[:4]} - {grab[4:8]} | {airlines.get(grab[8:11])}\n")
+                    title = (f"\n{grab[:4]} - {grab[4:8]} | {airlines.get(grab[8:11])}\n")
                     title = title.upper()
                     print(title)
                     print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n")
