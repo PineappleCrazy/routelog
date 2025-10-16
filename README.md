@@ -40,7 +40,7 @@ We proudly (fully) support over 100 aerodromes over 16 different countries.
 > + Algeria
 > + England
 
-![alt text](https://github.com/PineappleCrazy/Routelog/blob/main/images/git/supported.png)
+![alt text](https://github.com/PineappleCrazy/Routelog/blob/main/images/git/supported161025.png)
 
 Aerodromes with full coverage, up-to-date as per dataset update 12/10/25
 
