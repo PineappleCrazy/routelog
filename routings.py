@@ -2,8 +2,14 @@
 
 import shutil # module to backup files
 import os
+import clr # for cs
 import json
 from functions import search_navaid, selectImage, inputVal, inputVal1, airlVal, aircVal, numVal
+
+dll_path = os.path.join(os.path.dirname(__file__), 'RouteProcessor.dll')
+clr.AddReference(dll_path) # referencing dll to be used to fetch routenums
+
+from RouteProcessor import RouteCompiler # does work, silly vsc won't know that though
 
 citypath = os.path.join(os.path.dirname(__file__), 'references', 'cityref.json') # finding references folder to fetch json files
 countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.json')
@@ -130,13 +136,7 @@ def display():
                 print(title)
                 print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n") # oh this will be fun to decrypt in the future..
 
-                with open(routenumtxt,'r') as file:
-                    lines = file.readlines()
-                    lists = ''
-                    for line in lines:
-                        if grab[:11] in line:
-                            grab1 = line.strip()
-                            lists = (f"{lists}{grab1[-6:]}, ") # compiling list of route numbers
+                lists = RouteCompiler.CompileRouteNumbers(grab)
 
                 if len(lists) != 0:
                     print(f"{lists}\n") # only show route numbers if they.. exist.. duh
@@ -266,13 +266,7 @@ def viewall():
                 print(title)
                 print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n")
 
-                with open(routenumtxt,'r') as file:
-                        lines = file.readlines()
-                        lists = ''
-                        for line in lines:
-                            if grab[:11] in line:
-                                grab1 = line.strip()
-                                lists = (f"{lists}{grab1[-6:]}, ") # all viewing stuff noted prior
+                lists = RouteCompiler.CompileRouteNumbers(grab)
 
                 if len(lists) != 0:
                     print(f"{lists}\n")
@@ -402,13 +396,7 @@ def special():
                     print(title)
                     print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n")
 
-                    with open(routenumtxt,'r') as file:
-                        lines = file.readlines()
-                        lists = ''
-                        for line in lines:
-                            if grab[:11] in line:
-                                grab1 = line.strip()
-                                lists = (f"{lists}{grab1[-6:]}, ") # accumulating list of flight nums
+                    lists = RouteCompiler.CompileRouteNumbers(grab)
 
                     if len(lists) != 0:
                         print(f"{lists}\n")

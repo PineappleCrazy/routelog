@@ -146,6 +146,7 @@ ebbreddfdlh,LH1005
 ebbreddhbel,SN2623
 ebbreddmbel,SN2641
 ebbreddmbel,SN2643
+ebbreddmbel,SN2647
 ebbreddmdlh,LH2283
 ebbreetnbti,BT852/
 ebbrefhkfin,AY1542
