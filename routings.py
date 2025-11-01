@@ -5,7 +5,6 @@ import os
 import clr # for cs
 import json
 from functions import search_navaid, selectImage, inputVal, inputVal1, airlVal, aircVal, numVal, distanceCalc
-import ast
 
 dll_path = os.path.join(os.path.dirname(__file__), 'RouteProcessor.dll')
 clr.AddReference(dll_path) # referencing dll to be used to fetch routenums

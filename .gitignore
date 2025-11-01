@@ -3,4 +3,3 @@ localdata/
 !localdata/shuttle.txt
 .idea/
 __pycache__/
-.env
