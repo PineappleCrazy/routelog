@@ -1,5 +1,2 @@
-localdata/
-!localdata/routenum.txt
-!localdata/shuttle.txt
 .idea/
 __pycache__/
