@@ -4,7 +4,8 @@ import shutil # module to backup files
 import os
 import clr # for cs
 import json
-from functions import search_navaid, selectImage, inputVal, inputVal1, airlVal, aircVal, numVal
+from functions import search_navaid, selectImage, inputVal, inputVal1, airlVal, aircVal, numVal, distanceCalc
+import ast
 
 dll_path = os.path.join(os.path.dirname(__file__), 'RouteProcessor.dll')
 clr.AddReference(dll_path) # referencing dll to be used to fetch routenums
@@ -16,6 +17,7 @@ countrypath = os.path.join(os.path.dirname(__file__), 'references', 'countryref.
 firpath = os.path.join(os.path.dirname(__file__), 'references', 'firref.json')
 aircpath = os.path.join(os.path.dirname(__file__), 'references', 'aircref.json')
 airlpath = os.path.join(os.path.dirname(__file__), 'references', 'airlref.json')
+airpcoord = os.path.join(os.path.dirname(__file__), 'references', 'airpcoords.json')
 
 routenumtxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routenum.txt') # letting silly python find its text files
 routestxt = os.path.join(os.path.dirname(__file__), 'localdata', 'routes.txt')
@@ -35,6 +37,8 @@ with open(aircpath,'r',encoding='utf-8') as i:
     aircrafts = json.load(i) # fetching valid aircraft from json
 with open(airlpath,'r',encoding='utf-8') as i:
     airlines = json.load(i) # fetching valid airlines from json
+with open(airpcoord,'r',encoding='utf-8') as i:
+    airpcoords = json.load(i)
  
 end = 1 # constants, so fun
 valid = 0
@@ -134,12 +138,15 @@ def display():
                 title = (f"\n{grab[:4]} - {grab[4:8]} | {airlines.get(grab[8:11])}\n")
                 title = title.upper()
                 print(title)
-                print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n") # oh this will be fun to decrypt in the future..
+                coord1 = airpcoords[grab[:4]][0] + ", " + airpcoords[grab[:4]][1]
+                coord2 = airpcoords[grab[4:8]][0] + ", " + airpcoords[grab[4:8]][1]
+
+                print(f"{citynames.get(grab[:4])} - {citynames.get(grab[4:8])}\n\nDistance: {distanceCalc(coord1, coord2):.5g}km\n")
 
                 lists = RouteCompiler.CompileRouteNumbers(grab)
 
                 if len(lists) != 0:
-                    print(f"{lists}\n") # only show route numbers if they.. exist.. duh
+                    print(f"{lists[:-2]}\n") # only show route numbers if they.. exist.. duh
 
                 for aircraft in grab.split(",")[1:]:
                         if aircraft[:-1] in airclist:
@@ -263,13 +270,16 @@ def viewall():
                 grab = line.strip()
                 title = (f"\n{grab[:4]} - {grab[4:8]} | {airlines.get(grab[8:11])}\n")
                 title = title.upper()
-                print(title)
-                print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n")
+
+                coord1 = airpcoords[grab[:4]][0] + ", " + airpcoords[grab[:4]][1]
+                coord2 = airpcoords[grab[4:8]][0] + ", " + airpcoords[grab[4:8]][1]
+
+                print(f"{citynames.get(grab[:4])} - {citynames.get(grab[4:8])}\n\nDistance: {distanceCalc(coord1, coord2):.5g}km\n")
 
                 lists = RouteCompiler.CompileRouteNumbers(grab)
 
                 if len(lists) != 0:
-                    print(f"{lists}\n")
+                    print(f"{lists[:-2]}\n")
 
                 for aircraft in grab.split(",")[1:]:
                         if aircraft[:-1] in airclist:
@@ -394,12 +404,16 @@ def special():
                     title = (f"\n{grab[:4]} - {grab[4:8]} | {airlines.get(grab[8:11])}\n")
                     title = title.upper()
                     print(title)
-                    print(f"{citynames.get(grab[:4], 'Unknown')} - {citynames.get(grab[4:8], 'Unknown')}\n")
+                    
+                    coord1 = airpcoords[grab[:4]][0] + ", " + airpcoords[grab[:4]][1]
+                    coord2 = airpcoords[grab[4:8]][0] + ", " + airpcoords[grab[4:8]][1]
+
+                    print(f"{citynames.get(grab[:4])} - {citynames.get(grab[4:8])}\n\nDistance: {distanceCalc(coord1, coord2):.5g}km\n")
 
                     lists = RouteCompiler.CompileRouteNumbers(grab)
 
                     if len(lists) != 0:
-                        print(f"{lists}\n")
+                        print(f"{lists[:-2]}\n")
 
                     for aircraft in grab.split(",")[1:]:
                         if aircraft[:-1] in airclist and (aircraft[:-1] in searchAirc or searchAirc == ','):

@@ -1,6 +1,7 @@
 import os
 import json
 from PIL import Image
+from geopy.distance import geodesic
 
 citypath = os.path.join(os.path.dirname(__file__), 'references', 'cityref.json') # finding references folder to fetch json files
 navaid_data = os.path.join(os.path.dirname(__file__), 'references', 'navaids.json')
@@ -28,6 +29,10 @@ with open(aircpath,'r',encoding='utf-8') as i:
 with open(iatapath,'r',encoding='utf-8') as i:
     iatacodes = json.load(i) # fetching valid aircraft from json
 
+
+def distanceCalc(p1, p2):
+    dist = geodesic(p1, p2).kilometers
+    return(dist)
 
 def numVal():
     while True:
